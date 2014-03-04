@@ -1,0 +1,90 @@
+
+<style type="text/css">
+    .admin_perena_cover .bloque_izq {
+        margin: 20px;
+        float:left;
+        position: relative;
+        width:100%;
+        min-width: 500px;
+    }
+    .admin_perena_cover .bloque_izq select,.admin_perena_cover .bloque_izq input,.admin_perena_cover .bloque_izq textarea{
+        width:300px;
+    }
+    .admin_perena_cover .bloque_izq textarea{
+        height: 100px;
+    }
+    .admin_perena_cover .bloque_der {
+        margin: 20px;
+        float:left;
+        position: relative;
+        width:380px;
+    }
+    .admin_perena_cover label{
+        width:100px;
+        display: inline-block;
+    }
+    .titulo_flotante{
+        position: absolute;
+        width:120px;
+        height:30px;
+        background: #0A4926;
+        top:30px;
+        opacity: 0.8;
+        color:white;
+        font-size: 13px;
+        text-align: center;
+    }
+    .titulo_flotante_big{
+        position: absolute;
+        height:60px;
+        width:360px;
+        top:60px;
+        color:white;
+        font-size: 20px;
+        text-align: center;
+        opacity: 0.8;
+        background: #0A4926;
+
+    }
+    .titulo_flotante div{
+        margin: 8px auto;
+        display: inline-block;
+    }
+    .titulo_flotante_big div{
+        margin: 20px auto;
+        display: inline-block;
+    }
+
+</style>
+<div class="admin_perena_cover">
+    <form method="post" action="options.php"> 
+        <?php settings_fields( 'obt_cookies' );
+            $texto = get_option('obtga_texto','Utilizamos cookies propias y de terceros para mejorar nuestros servicios. Si continúa navegando, consideramos que acepta su uso.');
+            $titulo = get_option('obtga_titulo','Uso de Cookies');
+         ?>
+    <div class="bloque_izq">
+        <h1>Ajustes del plugin "<?=OBTURECODE_GA_NAME?>"</h1>
+        <h2>Configuración de analitycs</h2>
+        <div><label>ID Analitycs</label><input type="text" name="obtga_idanalitycs" value="<?=get_option('obtga_idanalitycs')?>"/></div>
+        <div><label>Título</label><input type="text" name="obtga_titulo" value="<?=$titulo?>"/></div>
+        <div><label>Texto</label><textarea type="text" name="obtga_texto"><?=$texto?></textarea></div>
+    </div>
+    <div style="clear:both"></div>
+    <div class="bloque_izq">
+    <h2>Personaliza el aviso</h2>
+    <p>Puedes personalizar el aviso sobrescribiendo en tu css los siguientes elementos:</p>
+    <ul>
+        <li>#obt_ga_banner</li>
+        <li>#obt_ga_contenido h2</li>
+        <li>#obt_ga_contenido p</li>
+        <li>#obt_ga_contenido a</li>
+        <li>#obt_ga_contenido</li>
+        <li>#obt_ga_boton</li>
+    </ul>
+    </div>
+    <hr />
+    
+    <div style="clear:both"></div>
+    <?php submit_button(); ?>
+</fom>
+</div>
