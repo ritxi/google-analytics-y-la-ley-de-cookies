@@ -1,7 +1,7 @@
 === Google Analytics y la ley de Cookies ===
 Contributors: obturecode
 Tags: ley de cookies, google analytics, cookies, privacidad, usuario, analytics, analitica, legal
-Stable tag: trunk
+Stable tag: 1.0
 Requires at least: 3.0.1
 Tested up to: 3.8
 License: GPLv2
