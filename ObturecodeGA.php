@@ -4,7 +4,7 @@ Plugin Name: Google Analytics y la ley de Cookies
 Plugin URI: http://obturecode.com
 Description: Obturecode te intenta ayudar con la ley española de cookies, integra analitycs facilmente en tu sitio
 Author: Obture Code
-Version: 1.1
+Version: 1.2
 Author URI: http://obturecode.com
 
 */  

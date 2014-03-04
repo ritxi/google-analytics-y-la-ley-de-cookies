@@ -1,7 +1,7 @@
 === Google Analytics y la ley de Cookies ===
 Contributors: obturecode
 Tags: ley de cookies, google analytics, cookies, privacidad, usuario, analytics, analitica, legal
-Stable tag: 1.1
+Stable tag: 1.2
 Requires at least: 3.0.1
 Tested up to: 3.8
 License: GPLv2
@@ -14,10 +14,15 @@ Si tu sitio web utiliza Google Analytics, te ayudamos a cumplir con la llamada L
 ¿Utilizas Google Analytics y estás preocupado por la nueva ley de cookies? Si es tu caso, las cookies que utiliza Google Analytics están afectadas por esta ley y por lo tanto debes poner mecanismos para obtener el consentimiento informado del usuario para usarlas. Este plugin te ayuda a cumplir con la ley de manera rápida y sencilla.
 
 ¿Cómo conseguir esto?
+
 1. Desactiva cualquier plugin de Google Analyitcs que tengas activo en WordPress
+
 2. Instala el plugin
+
 3. Personaliza los mensajes (esto es opcional)
+
 4. Ya está. No hay paso 3
+
 
  
 
