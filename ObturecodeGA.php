@@ -4,11 +4,12 @@ Plugin Name: Google Analytics y la ley de Cookies
 Plugin URI: http://obturecode.com
 Description: Obturecode te intenta ayudar con la ley española de cookies, integra analitycs facilmente en tu sitio
 Author: Obture Code
-Version: 1.0
+Version: 1.1
 Author URI: http://obturecode.com
 
 */  
 define('OBTURECODE_GA_NAME','Google Analytics y la ley de Cookies');
+define('OBTURECODE_GA_NAME_PATH','google-analytics-y-la-ley-de-cookies');
 function widget_obtcookies_control(){
     require dirname(__FILE__).'/obturecode_ga_admin.php';
 }
@@ -32,7 +33,7 @@ function widget_obtcookies_menu() {
     add_action( 'admin_menu', 'widget_obtcookies_menu' );
 
 function obtcookies_add_script(){
-    wp_enqueue_script( 'obtga-script', WP_PLUGIN_URL . '/obturecode_ga/main.js', array(), null, true );
+    wp_enqueue_script( 'obtga-script', WP_PLUGIN_URL . '/'.OBTURECODE_GA_NAME_PATH.'/main.js', array(), null, true );
     $params = array(
   		'idGA' => get_option('obtga_idanalitycs'),
   		'texto' => get_option('obtga_texto','Utilizamos cookies propias y de terceros para mejorar nuestros servicios. Si continúa navegando, consideramos que acepta su uso.'),
@@ -40,7 +41,7 @@ function obtcookies_add_script(){
       'url' => esc_url( get_permalink( get_option('obtga_id_pagina') )),
       'titulo_pagina' => get_option('obtga_titulo_pagina')
 	);
-    wp_enqueue_style('obtga-style',WP_PLUGIN_URL . '/obturecode_ga/obturecode_ga.css');
+    wp_enqueue_style('obtga-style',WP_PLUGIN_URL . '/'.OBTURECODE_GA_NAME_PATH.'/obturecode_ga.css');
     wp_localize_script( 'obtga-script', 'ObtGAParams', $params );
 }
 
