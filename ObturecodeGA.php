@@ -23,7 +23,7 @@ function widget_obtcookies_menu() {
       register_setting( 'obt_cookies', 'obtga_texto' );
       register_setting( 'obt_cookies', 'obtga_titulo' );
       if(get_option('obtga_idanalitycs')==null || get_option('obtga_idanalitycs')==""){
-        showMessage('El plugin: "'.OBTURECODE_GA_NAME.'" necesita ser configurado, hasta que no añadas tu ID de Analitycs no va a funcionar. <a href="/wp-admin/options-general.php?page=Widget_Obturecode_GA">Configúralo aquí</a>',true);
+        showMessage('El plugin: "'.OBTURECODE_GA_NAME.'" necesita ser configurado, hasta que no añadas tu ID de Analitycs no va a funcionar. <a href="options-general.php?page=Widget_Obturecode_GA">Configúralo aquí</a>',true);
       }
 }
   
@@ -70,7 +70,8 @@ function obtcookies_install(){
         // Se crea el objeto del post
         $_p = array();
         $_p['post_title'] = $titulo;
-        $_p['post_content'] = file_get_contents(WP_PLUGIN_URL . '/obturecode_ga/politica.html');
+        //$_p['post_content'] = file_get_contents(WP_PLUGIN_URL . '/obturecode_ga/politica.html');
+        $_p['post_content'] = file_get_contents( plugins_url( 'politica.html', __FILE__ ) );
         $_p['post_status'] = 'publish';
         $_p['post_type'] = 'page';
         $_p['comment_status'] = 'closed';

@@ -77,7 +77,7 @@ function obt_ga_hideBanner(){
 }
 
 function obt_ga_comprobar(){
-	if (window.opener) return;
+	if (window.opener && window.opener.closed) return;
 	var uri=parseUri (document.location);
 	var locationMainDomain = uri.authority.split('.');
 

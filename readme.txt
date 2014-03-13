@@ -21,7 +21,7 @@ Si tu sitio web utiliza Google Analytics, te ayudamos a cumplir con la llamada L
 
 3. Personaliza los mensajes (esto es opcional)
 
-4. Ya está. No hay paso 3
+4. Ya está. No hay paso 4
 
 
  
@@ -49,6 +49,7 @@ Infórmate aquí: http://www.agpd.es/portalwebAGPD/canaldocumentacion/publicacio
 == Installation ==
 
 Opción 1: desde el instalador de plugins de WordPress buscando Google Analytics y la ley de Cookies
+
 Opción 2: descargando el .zip desde la web del plugin y cargarlo con tu adminstrador de plugins
 
 == Configuración ==
@@ -69,7 +70,7 @@ En tu lista de Páginas verás una nueva página llamada Política de Cookies co
 
 = ¿Este plugin hará que mi sitio web cumpla con el artículo 22 de la LSSI (Ley de Cookies)? =
 
-No. Este plugin te ayudará a cumplir con la ley si tu sitio web utiliza Google Analytics pero será tu responsabilidad, y no del plugin, cumplir con la ley. Infórmate aquí: http://www.agpd.es/portalwebAGPD/canaldocumentacion/publicaciones/common/Guias/Guia_Cookies.pdf de cómo cumplir la ley y si tienes dudas consulta con un abogado
+No. Este plugin te ayudará a cumplir con la ley si tu sitio web utiliza Google Analytics pero será tu responsabilidad, y no del plugin, cumplir con la ley. Infórmate aquí: http://bit.ly/J8x197 (Agencia de Protección de Datos) de cómo cumplir la ley y si tienes dudas consulta con un abogado
 
 = ¿Puede colocar el aviso en la parte inferior? =
 
