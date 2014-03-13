@@ -1,0 +1,41 @@
+#obt_ga_banner{
+	padding-left: 20%;
+	padding-right: 20%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #555;
+}
+
+#obt_ga_contenido h2{
+	color: #EEE;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 5px;
+	clear: both;
+}
+#obt_ga_contenido p{
+	color: #EEE;
+	margin: 0px;
+	clear: both;
+	font-size: 13px;
+}
+#obt_ga_contenido a{
+	color: #FFF;
+}
+
+#obt_ga_contenido{
+	float:left;
+	width: 90%;
+}
+
+#obt_ga_boton{
+	float: right;
+	height: 20px;
+	cursor: pointer;
+	font-weight: bold;
+	color: #FFF;
+}
+#obt_ga_clear{
+	clear: both;
+}
