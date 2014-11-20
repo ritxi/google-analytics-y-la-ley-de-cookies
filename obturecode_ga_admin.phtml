@@ -7,6 +7,9 @@
         width:100%;
         min-width: 500px;
     }
+    .admin_perena_cover .bloque_izq input[type="radio"]{
+        width: 15px;
+    }
     .admin_perena_cover .bloque_izq select,.admin_perena_cover .bloque_izq input,.admin_perena_cover .bloque_izq textarea{
         width:300px;
     }
@@ -59,20 +62,46 @@
 <div class="admin_perena_cover">
     <form method="post" action="options.php"> 
         <?php settings_fields( 'obt_cookies' );
-            $texto = get_option('obtga_texto','Utilizamos cookies propias y de terceros para mejorar nuestros servicios. Si continúa navegando, consideramos que acepta su uso.');
-            $titulo = get_option('obtga_titulo','Uso de Cookies');
+            $texto = get_option('obtga_texto',OBTURECODE_GA_TEXT);
+            $titulo = get_option('obtga_titulo',OBTURECODE_GA_TITLE);
+            $acepto = get_option('obtga_acepto',OBTURECODE_GA_ACCEPT);
+            $tipo = get_option('obtga_intrusive_mode')
          ?>
     <div class="bloque_izq">
         <h1>Ajustes del plugin "<?=OBTURECODE_GA_NAME?>"</h1>
         <h2>Configuración de analitycs</h2>
         <div><label>ID Analitycs</label><input type="text" name="obtga_idanalitycs" value="<?=get_option('obtga_idanalitycs')?>"/></div>
-        <div><label>Título</label><input type="text" name="obtga_titulo" value="<?=$titulo?>"/></div>
-        <div><label>Texto</label><textarea type="text" name="obtga_texto"><?=$texto?></textarea></div>
+        <?php if(function_exists('pll_register_string')):?>
+            <p><div><label>Título</label><?php pll_e(OBTURECODE_GA_TITLE);?></div></p>
+            <p><div><label>Texto</label><?php pll_e(OBTURECODE_GA_TEXT);?></div></p>
+            <p><div><label>Aceptar</label><?php pll_e(OBTURECODE_GA_ACCEPT);?></div></p>
+            <p>Para configurar los Textos que aparecen en este plugin vete a la configuración de cadenas del plugin polylang</p>
+        <?php else: ?>
+            <div><label>Título</label><input type="text" name="obtga_titulo" value="<?=$titulo?>"/></div>
+            <div><label>Texto</label><textarea type="text" name="obtga_texto"><?=$texto?></textarea></div>
+            <div><label>Boton Aceptar</label><textarea type="text" name="obtga_acepto"><?=$acepto?></textarea></div>
+
+            <p>Este plugin soporta idiomas mediante el plugin polylang. Si instalas Polylang recuerda desactivar y activar este plugin para que veas los cambios</p>
+        <?php endif; ?>
+        <hr />
+        <h2>Tipo de aviso</h2>
+        <div class="radio">
+            <div style="float:left">
+                <label>Estilo de aviso</label>
+            </div>
+            <div style="float:left; width:300px">
+                <input type="radio" name="obtga_intrusive_mode" value="0" <?php echo($tipo==false?"checked='checked'":''); ?>>No Intrusivo<br />
+                <input type="radio" name="obtga_intrusive_mode" value="1" <?php echo($tipo==true?"checked='checked'":''); ?>>Intrusivo
+            </div>
+            <div style="clear:both">&nbsp;</div>
+            <p>El estilo de aviso <strong>intrusivo</strong> mostrará un aviso modal (hasta que no se acepte no dejará navegar)</p>
+        </div>
     </div>
     <div style="clear:both"></div>
     <div class="bloque_izq">
+    <hr />
     <h2>Personaliza el aviso</h2>
-    <p>Puedes personalizar el aviso sobrescribiendo en tu css los siguientes elementos:</p>
+    <p>Puedes personalizar el estilo del aviso sobrescribiendo en tu css los siguientes elementos:</p>
     <ul>
         <li>#obt_ga_banner</li>
         <li>#obt_ga_contenido h2</li>

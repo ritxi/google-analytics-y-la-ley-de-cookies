@@ -1,9 +1,9 @@
 === Google Analytics y la ley de Cookies ===
 Contributors: obturecode
 Tags: ley de cookies, google analytics, cookies, privacidad, usuario, analytics, analitica, legal
-Stable tag: 1.4
+Stable tag: 1.6
 Requires at least: 3.0.1
-Tested up to: 3.8
+Tested up to: 4.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,6 +51,17 @@ Infórmate aquí: http://www.agpd.es/portalwebAGPD/canaldocumentacion/publicacio
 Opción 1: desde el instalador de plugins de WordPress buscando Google Analytics y la ley de Cookies
 
 Opción 2: descargando el .zip desde la web del plugin y cargarlo con tu adminstrador de plugins
+== Changelog ==
+
+= 1.5 =
+* Añadido soporte de idiomas mediante el plugin Polylang.
+* Corrección de varios errores.
+* Probado en WordPress 3.9.1
+
+= 1.6 =
+* Añadido "modo intrusivo" de tal forma que si se activa, el aviso sobre cookies aparece como un cuadro modal que impide al usuario continuar navegando a menos que acepte el propio aviso
+* Solucionados unos problemas de la versión 1.6
+* Probado en WordPress 4.0
 
 == Configuración ==
 
