@@ -4,7 +4,7 @@ Plugin Name: Google Analytics y la ley de Cookies
 Plugin URI: http://obturecode.com
 Description: Obturecode te intenta ayudar con la ley española de cookies, integra analitycs facilmente en tu sitio
 Author: Obture Code
-Version: 1.6
+Version: 1.6.1
 Author URI: http://obturecode.com
 
 */  
@@ -149,9 +149,9 @@ function obtcookies_remove() {
     //  obtenemos el id de la página para borrarlo
     $id_pagina = get_option( 'obtga_id_pagina' );
     if( $id_pagina ) {
-        
-        $id_page_en = pll_get_post($id_pagina, 'en');
-        
+        if(function_exists('pll_get_post')){
+            $id_page_en = pll_get_post($id_pagina, 'en');
+        }
         if($id_page_en!=null)
             wp_delete_post( $id_page_en );
 
@@ -195,7 +195,10 @@ function obtga_alerts() {
             $error=true;
     }
     if($error)
-        showMessage('El plugin: "'.OBTURECODE_GA_NAME.'" ha detectado que el Texto de explicación que has personalizado no tiene la expresión %button% necesaria para sustituir por el botón a la pagina de polítitca de cookies. <a href="options-general.php?page=Widget_Obturecode_GA">Configúralo aquí</a>',true);
+        showMessage('Pon "%button%" (sin las comillas) dentro del campo "Texto" y automáticamente se sustituirá por el enlace a la página de política de cookies. ¡Es obligatorio!');
+    
+    // showMessage('El plugin: "'.OBTURECODE_GA_NAME.'" ha detectado que el Texto de explicación que has personalizado no tiene la expresión %button% necesaria para sustituir por el botón a la pagina de polítitca de cookies. <a href="options-general.php?page=Widget_Obturecode_GA">Configúralo aquí</a>',true);
+
 
 }
 add_action( 'admin_notices', 'obtga_alerts' );
